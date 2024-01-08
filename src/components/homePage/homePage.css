@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Michroma&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wraper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:#000;
+    background-image: url(./img/Screenshot\ 2024-01-08\ 214407.png);
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content_container{
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.page_title{
+    font-family: Audiowide;
+    font-size: 140px;
+    color: #fff;
+}
+.page_subtitle{
+    font-family: Michroma;
+    font-size: 28px;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+}
