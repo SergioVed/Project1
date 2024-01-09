@@ -1,0 +1,15 @@
+.wrapper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:#000;
+    background-image: url(./img/Screenshot\ 2024-01-08\ 214407.png);
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
