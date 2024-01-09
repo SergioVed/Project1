@@ -5,14 +5,18 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css';
-import { Header } from './components';
 import { HomePage } from './components/homePage';
+import { AllGames } from './components/all games';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage/>
-  }
+    element: <AllGames/>
+  },
+  // {
+  //   path: "/allGames",
+  //   element: <AllGames/>
+  // }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
