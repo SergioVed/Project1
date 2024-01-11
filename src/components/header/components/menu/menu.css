@@ -38,3 +38,7 @@
 .menu_item p {
     width: 75%;
 }
+.menu_item_link{
+    text-decoration: none;
+    color: #fff;
+}

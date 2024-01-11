@@ -7,16 +7,21 @@ import {
 import './index.css';
 import { HomePage } from './components/homePage';
 import { AllGames } from './components/all games';
+import { CardPageComponent } from './components/all games/components/card-page-component';
 
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <HomePage/>
+  },
+  {
+    path: "/AllGames",
     element: <AllGames/>
   },
-  // {
-  //   path: "/allGames",
-  //   element: <AllGames/>
-  // }
+  {
+    path: "/AllGames/Page/:gameId",
+    element: <CardPageComponent/>
+  },
 ])
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
