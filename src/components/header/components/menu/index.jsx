@@ -5,6 +5,8 @@ import info from "./img/info.png"
 import image from "./img/image.png"
 import menuBlack from "./img/menuBlack.png"
 import menuGrey from "./img/menuGrey.png"
+import { Link } from "react-router-dom"
+import { AllGames } from "../../../all games"
 export const Menu = () => {
     const menuRef = useRef()
     const [isOpen, setIsOpen] = useState(false)
@@ -21,7 +23,7 @@ export const Menu = () => {
                 <div className="menu_items">
                     <div className="menu_AllGames menu_item">
                         <img src={menu} alt="" />
-                        <p>All games</p>
+                        <p><Link to={"/AllGames"} className="menu_item_link">All games</Link></p>
                     </div>
                     <div className="menu_AboutUs menu_item">
                         <img src={info} alt=""/>
