@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-export const CardPageComponent = ({ gameId }) => {
-    const [game, setGame] = useState(null);
+export const CardPageComponent = () => {
+    const [game, setGame] = useState();
+    const {id} = useParams()
     useEffect(() => {
-        let fetchData = async(url) => {
-            let responce = await fetch(url, {
+        let fetchData = async() => {
+            let responce = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?id=${id}`, {
               headers: {
                 'X-RapidAPI-Key': '4315a56593msh57fafa17a112819p155efbjsn46ef0b5e1a69',
                 'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
               }
             })
             let data = await responce.json()
-            setGame(data[gameId])
-
+            setGame(data[id])
           }
-        fetchData(`https://free-to-play-games-database.p.rapidapi.com/api/games?id=${gameId}`)
-    }, [gameId])
+        fetchData()
+    }, [id])
     return(
         <div>
             {game ? (
-                <div key={gameId} className="">
+                <div key={id} className="">
                 <h1>{game.title}</h1>
                 <div>
                     <img src={`${game.thumbnail}`} alt="" />
