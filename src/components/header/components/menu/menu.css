@@ -1,44 +1,55 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
-.menu{
+.menu-container{
     position: fixed;
     top: 10px;
     left: 20px;
-    width: 13vw;
-    height: 19vh;
+    width: 315px;
+    height: 310px;
     display: flex;
     flex-direction: column;
-    transition: 1s;
-    transform: translateY(-110%);
+    transition: 0.5s;
+    transform: translateX(-110%);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 90;
 }
-.responsive_menu{
+.container-burger:hover .menu-container{
     transform: none;
 }
-.menu_close_btn{
+.menu-close-btn{
     position: fixed;
     top: 20px;
-    left: 30px;
+    left: 40px;
+    background: transparent;
+    border: none;
+    z-index: 99;
 }
-.menu_open_btn{
+.menu-open-btn{
     position: fixed;
     top: 20px;
-    left: 30px;
+    left: 40px;
+    background: transparent;
+    border: none;
 }
-.menu_items{
+.menu-items{
     padding-top: 20%;
 }
-.menu_item{
+.menu-item{
     display: flex;
     justify-content: space-around;
-    font-family: Exo;
+    align-items: center; 
+    font-family: Michroma;
     color: #fff;
-    font-size: 40px;
+    font-size: 27px;
+    font-weight: 550;
+    margin-bottom: 5px;
 }
-.menu_item p {
-    width: 75%;
+.menu-item img{
+    width: auto;
+    height: 55px;
 }
-.menu_item_link{
+.menu-item-link{
     text-decoration: none;
+    width: 200px;
     color: #fff;
 }

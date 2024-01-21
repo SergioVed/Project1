@@ -1,12 +1,17 @@
-.search{
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+.search-container{
     position: fixed;
     top: 15px;
     right: 40px;
+    z-index: 99;
 }
-.search_input{
+.search-input{
     height: 60px;
     width: 400px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
     padding-left: 70px;
     font-size: 25px;
     font-family: Michroma;
@@ -16,29 +21,43 @@
     outline: none;
     transition: 0.5s;
 }
-.search_input_after{
+.search-input-after{
     transition: 0.5s;
     border-radius: 20px 20px 0px 0px;
 }
-.search_input::placeholder{
+.search-input::placeholder{
     color: #000;
 }
-.search img{
+.search-container img{
     position: relative;
-    top: 10px;
+    top: -5px;
     left: 50px;
 }
-.search_results{
+.search-results{
     position: relative;
     left: 34px;
     overflow-y: auto;
     height: 120px;
     width: 400px;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 0px 0px 20px 20px;
-    transition: 0.7s;
+    transition: 0.2s;
+    z-index: 10;
 }
-.search_results_invisible{
-    transition: 0.7s;
+.search-results-invisible{
+    transition: 0.1s;
     opacity: 0;
+}
+.filteredGames-p{
+    width: 280px;
+    margin-left: 65px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    color: #000;
+    font-family: Michroma;
+    font-size: 20px;
+    border-bottom: 1px solid #000;
+}
+.link{
+    text-decoration: none;
 }
