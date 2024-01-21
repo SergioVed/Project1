@@ -1,7 +1,9 @@
 .card_container{
     display: flex;
     flex-direction: column;
-    padding: 40px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
+    filter: drop-shadow(0px 0px 10px #000);
+    text-decoration: none;
 }
 .card_content{
     display: flex;
@@ -16,15 +18,19 @@
     font-family: Michroma;
     font-size: 20px;
     color: #fff;
+    text-decoration: none;
+    font-weight: 650;
 }
 .card_content h3{
     font-family:  exo;
-    font-size: 15px;
+    font-weight: 550;
+    font-size: 19px;
     color: #fff;
 }
 .cards{
-    width: 80vw;
+    width: 85vw;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: auto;
 }

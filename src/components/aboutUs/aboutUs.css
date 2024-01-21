@@ -1,0 +1,107 @@
+body{
+    overflow-x: hidden
+}
+.AboutUs_container{
+    width: 100vw;
+}
+.AboutUs_container_first{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.AboutUs_wrapper{
+    position: relative;
+    background-color: #000;
+    z-index: 0;
+}
+.AboutUs_wrapper::before{
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: url('./img/Screenshot 2024-01-08 214407.png');
+    background-repeat: repeat;
+    background-size: cover;
+}
+.AboutUs_content{
+    margin-top: 140px;
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+}
+.AboutUs_content img{
+    width: auto;
+    height: 450px;
+}
+.aboutUs_h2{
+    margin-top: 10%;
+    font-family: Audiowide;
+    color: #fff;
+    font-size: 90px;
+    font-weight: 200;
+    filter: drop-shadow(0px 0px 2px #fff);
+}
+.aboutUs_h2_addiitional{
+    font-family: Audiowide;
+    color: #fff;
+    font-size: 75px;
+    font-weight: 200;
+    filter: drop-shadow(0px 0px 2px #fff);
+}
+.additional_section{
+    margin-top: 140px;
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+}
+.AboutUs_content_text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 350px;
+}
+.AboutUs_content_text p{
+    color: #fff;
+    font-size: 42px;
+    font-family: Michroma;
+    width: 700px;
+    text-align: center;
+}
+.AboutUs_content_text button{
+    color: #fff;
+    background-color: #67C8FF;
+    font-size: 22px;
+    font-family: Michroma;
+    height: 80px;
+    width: 250px;
+    border: none;
+    border-radius: 6px;
+}
+.AboutUs_container_second{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.additional_section{
+    margin-top: 140px;
+    width: 70vw;
+    display: flex;
+    justify-content: space-around;
+}
+.additional_section img{
+    width: 600px;
+    height: auto;
+}
+.additional_section_ul{
+    width: 50%;
+    color: #fff;
+    font-family: Michroma;
+    font-size: 25px;
+}

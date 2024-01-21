@@ -1,0 +1,23 @@
+.sort-container{
+    width: 1100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 160px;
+}
+.sort-container-item{
+    width: 170px;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    font-size: 17px;
+    font-family: Michroma;
+    border: none;
+    height: 40px;
+    font-weight: 550;
+}
+.sort-container-h2{
+    color: #fff;
+    font-family: Michroma;
+    text-align: center;
+    font-weight: 550;
+}

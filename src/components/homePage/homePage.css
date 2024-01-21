@@ -4,7 +4,7 @@
     margin: 0;
     box-sizing: border-box;
 }
-.wraper{
+.wrapper-homePage{
     position: relative;
     width: 100vw;
     height: 100vh;
@@ -13,12 +13,13 @@
     background-color:#000;
     background-image: url(./img/Screenshot\ 2024-01-08\ 214407.png);
 }
-.container{
+.container-homePage{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.content_container{
+.content-container{
     width: 70vw;
     display: flex;
     flex-direction: column;
@@ -26,15 +27,18 @@
     align-items: center;
     margin-bottom: 60px;
 }
-.page_title{
+.page-title{
     font-family: Audiowide;
     font-size: 140px;
     color: #fff;
+    filter: drop-shadow(0px 0px 3px #fff);
 }
-.page_subtitle{
+.page-subtitle{
     font-family: Michroma;
     font-size: 28px;
     color: #C8C8C8;
     width: 50%;
     text-align: center;
+    filter: drop-shadow(0px 0px 1px #C8C8C8);
+
 }
