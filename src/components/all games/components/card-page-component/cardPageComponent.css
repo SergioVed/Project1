@@ -1,0 +1,112 @@
+.gamePage-wrapper{
+    position: relative;
+    background-color: #000;
+    z-index: 0;
+}
+.gamePage-content-wrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 90vw;
+}
+.gamePage-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}  
+.gamePage-wrapper::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    background-image: url('./img/Screenshot 2024-01-08 214407.png');
+    background-repeat: repeat;
+    background-size: cover;
+}
+.gamePage-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.gamePage-title {
+    filter: drop-shadow(0px 0px 3px #fff);
+    font-family: Audiowide;
+    color: #fff;
+    font-size: 90px;
+    font-weight: 200;
+    margin-top: 3%;
+}
+.gamePage-shortDescription{
+    margin-top: 50px;
+    margin-bottom: 90px;
+    font-family: Michroma;
+    color: #C8C8C8;
+    width: 70VW;
+    font-size: 40px;
+    font-weight: 200;
+    text-align: center;
+}
+.gamePage-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    width: 40vw;
+}
+.gamePage-section h2 {
+    font-family: Audiowide;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 200;
+    text-align: left;
+}
+.carousel{
+    height: 600px;
+    width: 1070px;
+    filter: drop-shadow(0px 0px 3px #000);
+}
+.carousel-img{
+    height: 600px;
+    width: auto;
+}
+.gamePage-list{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 80px 50px 80px;
+}
+.gamePage-system-requirements{
+    margin-top: 50px;
+}
+.gamePage-requirements-list{
+    grid-template-columns: 400px 400px 200px;
+}
+.gamePage-list-h4{
+    font-family: Michroma;
+    font-size: 18px;
+    color: #eaeaea;
+    text-align: left;
+}
+.gamePage-list-p{
+    font-family: Michroma;
+    font-size: 19px;
+    color: #b7b7b7;
+    text-align: left;
+}
+.gamePage-list-div-last{
+    grid-row: 3/4;
+}
+.gamePage_link{
+    width: 30vw;
+    margin-top: 50px;
+    text-align: center;
+}
+.gamePage_link a{
+    text-decoration: underline;
+    font-family: Michroma;
+    font-size: 50px;
+    color: #fff;
+}

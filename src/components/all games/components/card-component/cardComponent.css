@@ -1,0 +1,36 @@
+.card_container{
+    display: flex;
+    flex-direction: column;
+    margin: 40px 0px 0px 0px;
+    filter: drop-shadow(0px 0px 10px #000);
+    text-decoration: none;
+}
+.card_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 370px;
+    height: 100px;
+    padding: 0px 0px 0px 10px;
+}
+.card_content h1{
+    font-family: Michroma;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 650;
+}
+.card_content h3{
+    font-family:  exo;
+    font-weight: 550;
+    font-size: 19px;
+    color: #fff;
+}
+.cards{
+    width: 85vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: auto;
+}

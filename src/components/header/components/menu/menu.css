@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo&display=swap');
+.menu-container{
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    width: 315px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s;
+    transform: translateX(-110%);
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 90;
+}
+.container-burger:hover .menu-container{
+    transform: none;
+}
+.menu-close-btn{
+    position: fixed;
+    top: 20px;
+    left: 40px;
+    background: transparent;
+    border: none;
+    z-index: 99;
+}
+.menu-open-btn{
+    position: fixed;
+    top: 20px;
+    left: 40px;
+    background: transparent;
+    border: none;
+}
+.menu-items{
+    padding-top: 20%;
+}
+.menu-item{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    font-family: Michroma;
+    color: #fff;
+    font-size: 27px;
+    font-weight: 550;
+    margin-bottom: 5px;
+}
+.menu-item img{
+    width: auto;
+    height: 55px;
+}
+.menu-item-link{
+    text-decoration: none;
+    width: 200px;
+    color: #fff;
+}

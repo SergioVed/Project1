@@ -1,0 +1,106 @@
+.contactUs-wrapper{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color:#000;
+    background-image: url(./img/Screenshot\ 2024-01-08\ 214407.png);
+}
+.contactUs-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contactUs-form{
+    padding-top: 5%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.contactUs-content{
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+.contactUs-content-button{
+    margin-top: 20px;
+    width: 300px;
+    height: 70px;
+    color: #fff;
+    background-color: #67C8FF;
+    font-size: 22px;
+    font-family: Michroma;
+    border: none;
+    border-radius: 6px;
+}
+.contactUs-p{
+    font-family: Audiowide;
+    font-size: 100px;
+    color: #fff;
+    filter: drop-shadow(0px 0px 2px #fff);
+    text-align: center;
+}
+.contactUs-form-h1{
+    font-family: Audiowide;
+    color: #fff;
+    font-size: 90px;
+    font-weight: 200;
+    text-align: center;
+    filter: drop-shadow(0px 0px 3px #fff);
+}
+.input{
+    height: 70px;
+    width: 650px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 22px;
+    font-family: Michroma;
+    color: #000;
+    border: none;
+    border-radius: 10px 10px 10px 10px;
+    outline: none;
+    transition: 0.5s;
+}
+.message-input{
+    height: 280px;
+    padding-top: 10px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30vw;
+    height: 60vh;
+}
+.form-label{  
+    font-size: 40px;
+    font-family: Audiowide;
+    color: #fff;
+}
+.contactUs-text{
+    width: 25vw;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 40vh;
+}
+.contactUs-content-info{
+    display: flex;
+    flex-direction: column;
+}
+.contactUs-content-info-h2{
+    font-size: 70px;
+    font-family: Audiowide;
+}
+.contactUs-content-info-p{
+    font-size: 30px;
+    font-weight: 100;
+    font-family: Michroma; 
+    margin-top: 20px;
+    letter-spacing: 1.5px;
+}
