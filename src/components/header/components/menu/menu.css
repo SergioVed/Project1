@@ -10,7 +10,7 @@
     transition: 0.5s;
     transform: translateX(-110%);
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.7);
     z-index: 90;
 }
 .container-burger:hover .menu-container{
@@ -39,7 +39,6 @@
     justify-content: space-around;
     align-items: center; 
     font-family: Michroma;
-    color: #fff;
     font-size: 27px;
     font-weight: 550;
     margin-bottom: 5px;
@@ -51,5 +50,6 @@
 .menu-item-link{
     text-decoration: none;
     width: 200px;
-    color: #fff;
+    color: #000;
+    font-weight: 200;
 }

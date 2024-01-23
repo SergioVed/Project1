@@ -1,13 +1,14 @@
 import { useForm, ValidationError } from '@formspree/react';
 import "./contactUs.css"
+import 'animate.css';
 import { Header } from "../header"
 export const ContactUs = () => {
   const [state, handleSubmit] = useForm("mvoezpkp");
   if (state.succeeded) {
     return(
-        <div className='contactUs-wrapper contactUs-container'>
+        <div className='contactUs-wrapper contactUs-additional'>
             <Header/>
-            <p className='contactUs-p'>Thanks for your message!</p>
+            <p className='contactUs-additional-p'>Thanks for your message!</p>
         </div>
     )
   }
@@ -15,15 +16,18 @@ export const ContactUs = () => {
     <div className='contactUs-wrapper'>
     <Header/>
         <div className='contactUs-form'>
-            <h1 className='contactUs-form-h1'>CONTACT US</h1>
-            <div className='contactUs-content'>
+            <h1 className='contactUs-form-h1 animate__animated animate__fadeInDown'>CONTACT US</h1>
+            <div className='contactUs-content animate__animated animate__fadeIn animate__delay-1s'>
                 <form onSubmit={handleSubmit} className='form'>
                     <label htmlFor="email" className='form-label'>Name</label>
                     <input id="name" type="text" name="name" className='email-input input'/>
+
                     <label htmlFor="email" className='form-label'>Email Address</label>
                     <input id="email" type="email" name="email" className='email-input input'/>
+
                     <ValidationError prefix="Email" field="email" errors={state.errors}/>
-                    <label htmlFor="email" className='form-label'>Email Address</label>
+                    
+                    <label htmlFor="email" className='form-label'>Your message</label>
                     <textarea id="message" name="message" className='message-input input'/>
                     <ValidationError prefix="Message" field="message" errors={state.errors}/>
 

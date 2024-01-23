@@ -1,0 +1,10 @@
+.checkBox-container{
+    display: flex;
+    color: #fff;
+}
+.checkBox-container-div{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 400px;
+}
