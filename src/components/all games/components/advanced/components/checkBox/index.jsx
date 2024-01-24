@@ -2,11 +2,6 @@ import { useEffect, useState } from "react"
 import "./checkBox.css"
 export const CheckBox = ({ updateAdvancedTags }) => {
     const [checkBoxes, setCheckBoxes] = useState({
-        platform: [
-            { value: "all", label: "All", checked: false },
-            { value: "pc", label: "Pc", checked: false },
-            { value: "browser", label: "Browser", checked: false },
-          ],
         genre: [
             {value: "mmorpg", label: "mmorpg", checked: false},
             {value: "shooter", label: "shooter", checked: false},
@@ -27,10 +22,6 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             {value: "pvp", label: "PVP", checked: false},
             {value: "pve", label: "PVE", checked: false}
         ],
-        gamePlay: [
-            {value: "turn-based", label: "Turn-Based", checked: false},
-            {value: "real-time", label: "Real-Time", checked: false}
-        ],
         setting: [
             {value: "anime", label: "Anime", checked: false},
             {value: "fantasy", label: "Fantasy", checked: false},
@@ -40,8 +31,6 @@ export const CheckBox = ({ updateAdvancedTags }) => {
         ],
         tags: [
             {value: "mmofps", label: "MMOFPS", checked: false},
-            {value: "sandbox", label: "Sandbox", checked: false},
-            {value: "survival", label: "Survival", checked: false},
             {value: "mmorts", label: "MMORTS", checked: false},
             {value: "pixel", label: "Pixel", checked: false},
             {value: "voxel", label: "Voxel", checked: false},
@@ -58,16 +47,21 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             {value: "low-spec", label: "Low-Spec", checked: false},
         ]
     })
-    const selectedValues = [];
-    for (const group in checkBoxes) {
-        for (const checkbox of checkBoxes[group]) {
-            if (checkbox.checked) {
-                selectedValues.push(checkbox.value);
+
+    const checkBoxesChange = (group, index) => {  
+        updateAdvancedTags((prevValue) => {
+            const updatedValue = new Set([...prevValue]);
+          
+            const newValue = checkBoxes[group][index].value;
+          
+            if (updatedValue.has(newValue)) {
+              updatedValue.delete(newValue);
+            } else {
+              updatedValue.add(newValue);
             }
-        }
-    }
-    updateAdvancedTags(selectedValues);
-    const checkBoxesChange = (group, index) => {
+          
+            return [...updatedValue];
+          });
         setCheckBoxes((prevCheckBoxes) => {
             const updatedCheckBoxes = {...prevCheckBoxes}
             updatedCheckBoxes[group][index].checked = !updatedCheckBoxes[group][index].checked
@@ -76,18 +70,16 @@ export const CheckBox = ({ updateAdvancedTags }) => {
     }
     return(
         <div className="checkBox-container">
-            <div className="checkBox-container-div">
-                {checkBoxes.platform.map((check, index) => (
-                    <div key={index}>
-                        <input type="checkbox" id={check.value} value={check.value} checked={check.checked} onChange={() => {checkBoxesChange("platform", index)}}></input>
-                        <label htmlFor={check.value}>{check.label}</label>
-                    </div>
-                ))}
-            </div>
+            
             <div className="checkBox-container-div">
                 {checkBoxes.genre.map((check, index) => (
                     <div key={index}>
-                        <input type="checkbox" id={check.value} value={check.value} checked={check.checked} onChange={() => {checkBoxesChange("genre", index)}}></input>
+                        <input type="checkbox" 
+                            id={check.value} 
+                            value={check.value} 
+                            checked={check.checked} 
+                            onChange={() => {checkBoxesChange("genre", index)}}>
+                        </input>
                         <label htmlFor={check.value}>{check.label}</label>
                     </div>
                 ))}
@@ -95,7 +87,12 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             <div className="checkBox-container-div">
                 {checkBoxes.graphics.map((check ,index) => (
                     <div key={index}>
-                        <input type="checkbox" id={check.value} value={check.value} checked={check.checked} onChange={() => {checkBoxesChange("graphics", index)}}></input>
+                        <input type="checkbox" 
+                            id={check.value} 
+                            value={check.value} 
+                            checked={check.checked} 
+                            onChange={() => {checkBoxesChange("graphics", index)}}>
+                        </input>
                         <label htmlFor={check.value}>{check.label}</label>
                     </div>
                 ))}
@@ -103,15 +100,12 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             <div className="checkBox-container-div">
                 {checkBoxes.combat.map((check ,index) => (
                     <div key={index}>
-                        <input type="checkbox" id={check.value} value={check.value} checked={check.checked} onChange={() => {checkBoxesChange("combat", index)}}></input>
-                        <label htmlFor={check.value}>{check.label}</label>
-                    </div>
-                ))}
-            </div>
-            <div className="checkBox-container-div">
-                {checkBoxes.gamePlay.map((check ,index) => (
-                    <div key={index}>
-                        <input type="checkbox" id={check.value} value={check.value} checked={check.checked} onChange={() => {checkBoxesChange("gamePlay", index)}}></input>
+                        <input type="checkbox" 
+                            id={check.value} 
+                            value={check.value} 
+                            checked={check.checked} 
+                            onChange={() => {checkBoxesChange("combat", index)}}>
+                        </input>
                         <label htmlFor={check.value}>{check.label}</label>
                     </div>
                 ))}
@@ -119,7 +113,12 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             <div className="checkBox-container-div">
                 {checkBoxes.setting.map((check ,index) => (
                     <div key={index}>
-                        <input type="checkbox" id={check.value} value={check.value} checked={check.checked} onChange={() => {checkBoxesChange("setting", index)}}></input>
+                        <input type="checkbox" 
+                            id={check.value} 
+                            value={check.value} 
+                            checked={check.checked} 
+                            onChange={() => {checkBoxesChange("setting", index)}}>
+                        </input>
                         <label htmlFor={check.value}>{check.label}</label>
                     </div>
                 ))}
@@ -127,7 +126,12 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             <div className="checkBox-container-div">
                 {checkBoxes.tags.map((check ,index) => (
                     <div key={index}>
-                        <input type="checkbox" id={check.value} value={check.value} checked={check.checked} onChange={() => {checkBoxesChange("tags", index)}}></input>
+                        <input type="checkbox" 
+                            id={check.value} 
+                            value={check.value} 
+                            checked={check.checked} 
+                            onChange={() => {checkBoxesChange("tags", index)}}>
+                        </input>
                         <label htmlFor={check.value}>{check.label}</label>
                     </div>
                 ))}

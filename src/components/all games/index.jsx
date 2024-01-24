@@ -10,18 +10,20 @@ export const AllGames = () => {
     const [isOpen, setIsOpen] = useState(false)
     const openMenu = () => {
         setIsOpen(true)
+        openAdvancedApiFetch()
     }
     const closeMenu = () => {
         setIsOpen(false)
+        closeAdvancedApiFetch()
     }
     const [games, setGames] = useState([])
     const [visibleGames, setVisibleGames] = useState([])
     const [visibleItems, setVisibleItems] = useState(30)
 
     const [selectedPlatform, setSelectedPlatform] = useState("all");
-    const [selectedGenre, setSelectedGenre] = useState("shooter");
+    const [selectedGenre, setSelectedGenre] = useState("mmorpg");
     const [selectedTag, setSelectedTag] = useState("popularity");
-    const [checkboxTag, setCheckboxTag] = useState([])
+    const [checkboxTag, setCheckboxTag] = useState([]);
 
     const [buttonTopVisual, setButtonTopVisual] = useState("")
     const [buttonTop, setButtonTop] = useState("")
@@ -47,32 +49,54 @@ export const AllGames = () => {
             }
           }
     })
-    useEffect(() => {
-        let fetchData = async() => {
-            if (isOpen) {
-            let responce = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=${checkboxTag}`, {
-              headers: {
-                'X-RapidAPI-Key': '4315a56593msh57fafa17a112819p155efbjsn46ef0b5e1a69',
-                'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-              }})  
-              let data = await responce.json()
-              setGames(data)
-            } else {
-                let responce = await fetch(`https://free-to-play-games-database.p.rapidapi.com/api/games?category=${selectedGenre}&platform=${selectedPlatform}&sort-by=${selectedTag}`, {
+    function closeAdvancedApiFetch() {
+        let fetchData = async () => {
+            let url = `https://free-to-play-games-database.p.rapidapi.com/api/games?category=${selectedGenre}&platform=${selectedPlatform}&sort-by=${selectedTag}`;
+            let responce = await fetch(url,
+                {
                     headers: {
-                      'X-RapidAPI-Key': '4315a56593msh57fafa17a112819p155efbjsn46ef0b5e1a69',
-                      'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com'
-                    }
-                  })  
-                  let data = await responce.json()
-                  setGames(data)
-            }
+                        "X-RapidAPI-Key":
+                          "4315a56593msh57fafa17a112819p155efbjsn46ef0b5e1a69",
+                        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+                    },
+                }
+            );
+            let data = await responce.json();
+            setGames(data);
         }
-        fetchData()
-    }, [selectedPlatform, selectedGenre, selectedTag, visibleItems, checkboxTag])
+        fetchData();
+    }
+    function openAdvancedApiFetch () {
+        let fetchData = async () => {
+            let url
+            if (isOpen) {
+            url = checkboxTag.length === 0 ? `https://free-to-play-games-database.p.rapidapi.com/api/games` : `https://free-to-play-games-database.p.rapidapi.com/api/filter?tag=${checkboxTag.join(".")}`;
+            }
+            let responce = await fetch(url,
+                {
+                    headers: {
+                        "X-RapidAPI-Key":
+                          "4315a56593msh57fafa17a112819p155efbjsn46ef0b5e1a69",
+                        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+                    },
+                }
+            );
+            let data = await responce.json();
+            setGames(data);
+        }   
+        fetchData();
+    }
+    useEffect(() => {
+        if (isOpen) {
+            openAdvancedApiFetch()
+        } else {
+            closeAdvancedApiFetch()
+        }
+      }, [selectedPlatform, selectedGenre, selectedTag, visibleItems, checkboxTag]);
     useEffect(() => {
         setVisibleGames(games.slice(0, visibleItems))
     }, [games, visibleItems])
+    console.log(games)
     return(
         <div className="wrapper allGames_container">
             <Header/>
@@ -93,7 +117,7 @@ export const AllGames = () => {
                 />
             )}
             <div className="allGames_cards">
-                <CardComponent games={visibleGames}/>
+                {Array.isArray(games) ?  <CardComponent games={visibleGames}/> : <h2>No game found</h2>}
             </div>
             {visibleItems < games.length && (
                 <h2 className="allGames_h2" onClick={() => {
