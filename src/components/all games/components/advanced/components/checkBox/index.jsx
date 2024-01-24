@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import "./checkBox.css"
 export const CheckBox = ({ updateAdvancedTags }) => {
-    const [choisedValues, setChoisedValues] = useState([])
-    updateAdvancedTags = {choisedValues}
     const [checkBoxes, setCheckBoxes] = useState({
         platform: [
             { value: "all", label: "All", checked: false },
@@ -60,17 +58,15 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             {value: "low-spec", label: "Low-Spec", checked: false},
         ]
     })
-    useEffect(() => {
-        const selectedValues = [];
-        for (const group in checkBoxes) {
-            for (const checkbox of checkBoxes[group]) {
-                if (checkbox.checked) {
-                    selectedValues.push(checkbox.value);
-                }
+    const selectedValues = [];
+    for (const group in checkBoxes) {
+        for (const checkbox of checkBoxes[group]) {
+            if (checkbox.checked) {
+                selectedValues.push(checkbox.value);
             }
         }
-        setChoisedValues(selectedValues);
-    }, [checkBoxes, updateAdvancedTags]);
+    }
+    updateAdvancedTags(selectedValues);
     const checkBoxesChange = (group, index) => {
         setCheckBoxes((prevCheckBoxes) => {
             const updatedCheckBoxes = {...prevCheckBoxes}

@@ -69,7 +69,7 @@ export const AllGames = () => {
             }
         }
         fetchData()
-    }, [selectedPlatform, selectedGenre, selectedTag,  visibleItems, checkboxTag])
+    }, [selectedPlatform, selectedGenre, selectedTag, visibleItems, checkboxTag])
     useEffect(() => {
         setVisibleGames(games.slice(0, visibleItems))
     }, [games, visibleItems])
@@ -84,7 +84,7 @@ export const AllGames = () => {
                 <button onClick={closeMenu}>Close Advanced</button>
             )}
             {isOpen ? (
-                <CheckBox choisedValues={checkboxTag}/>
+                <CheckBox updateAdvancedTags={setCheckboxTag}/>
             ) : (
                 <SortSelect
                     handlePlatformChange={handlePlatformChange}
