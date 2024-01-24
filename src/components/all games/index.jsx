@@ -117,7 +117,7 @@ export const AllGames = () => {
                 />
             )}
             <div className="allGames_cards">
-                {Array.isArray(games) ?  <CardComponent games={visibleGames}/> : <h2>No game found</h2>}
+                {games.length === 0 ? <h2>No game found</h2> : <CardComponent games={visibleGames}/>}
             </div>
             {visibleItems < games.length && (
                 <h2 className="allGames_h2" onClick={() => {
