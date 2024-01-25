@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import "./checkBox.css"
-export const CheckBox = ({ updateAdvancedTags }) => {
+export const CheckBox = ({ updateAdvancedTags, className }) => {
     const [checkBoxes, setCheckBoxes] = useState({
         genre: [
             {value: "mmorpg", label: "mmorpg", checked: false},
@@ -47,7 +47,6 @@ export const CheckBox = ({ updateAdvancedTags }) => {
             {value: "low-spec", label: "Low-Spec", checked: false},
         ]
     })
-
     const checkBoxesChange = (group, index) => {  
         updateAdvancedTags((prevValue) => {
             const updatedValue = new Set([...prevValue]);
@@ -69,8 +68,7 @@ export const CheckBox = ({ updateAdvancedTags }) => {
         })
     }
     return(
-        <div className="checkBox-container">
-            
+        <div className={`${className} checkBox-container`}>
             <div className="checkBox-container-div">
                 {checkBoxes.genre.map((check, index) => (
                     <div key={index}>
