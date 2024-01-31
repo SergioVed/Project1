@@ -84,9 +84,10 @@ body{
     border-radius: 6px;
 }
 .AboutUs_container_second{
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 .additional_section{
