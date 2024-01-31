@@ -1,0 +1,39 @@
+.card{
+  margin-bottom: 60px;
+}
+.card_content-h1{
+  font-family: Michroma;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 650;
+}
+.card_content-h3{
+  font-family:  exo;
+  font-weight: 550;
+  font-size: 19px;
+  color: #fff;
+}  
+.card-button{
+  border: none;
+  border-radius: 11px;
+  background-color: grey;
+  width: 120px;
+  height: 45px;
+  font-family: Exo;
+}
+.card-link{
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+@keyframes wave {
+  from {
+    -webkit-mask-position: 150%;
+    transition: 1s;
+  }
+  to {
+    -webkit-mask-position: -50%;
+    transition: 1s;
+  }
+}

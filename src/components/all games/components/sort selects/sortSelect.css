@@ -20,4 +20,10 @@
     font-family: Michroma;
     text-align: center;
     font-weight: 550;
+    margin-right: 15px;
+}
+.sort-container-group{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

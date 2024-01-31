@@ -1,22 +1,22 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import "./checkBox.css"
 export const CheckBox = ({ updateAdvancedTags, className }) => {
     const [checkBoxes, setCheckBoxes] = useState({
         genre: [
-            {value: "mmorpg", label: "mmorpg", checked: false},
-            {value: "shooter", label: "shooter", checked: false},
-            {value: "strategy", label: "strategy", checked: false},
-            {value: "moba", label: "moba", checked: false},
-            {value: "racing", label: "racing", checked: false},
-            {value: "sports", label: "sports", checked: false},
-            {value: "social", label: "social", checked: false},
-            {value: "sandbox", label: "sandbox", checked: false},
-            {value: "open-world", label: "open-world", checked: false},
-            {value: "survival", label: "survival", checked: false},
+            {value: "mmorpg", label: "MMORPG", checked: false},
+            {value: "shooter", label: "Shooter", checked: false},
+            {value: "strategy", label: "Strategy", checked: false},
+            {value: "moba", label: "Moba", checked: false},
+            {value: "racing", label: "Racing", checked: false},
+            {value: "sports", label: "Sports", checked: false},
+            {value: "social", label: "Social", checked: false},
+            {value: "sandbox", label: "Sandbox", checked: false},
+            {value: "open-world", label: "Open-world", checked: false},
+            {value: "survival", label: "Survival", checked: false},
         ],
         graphics: [
-            {value: "3d", label: "3D", checked: false},
-            {value: "2d", label: "2D", checked: false}
+            {value: "3d", label: "3D Graphics", checked: false},
+            {value: "2d", label: "2D Graphics", checked: false}
         ],
         combat: [
             {value: "pvp", label: "PVP", checked: false},
@@ -58,7 +58,6 @@ export const CheckBox = ({ updateAdvancedTags, className }) => {
             } else {
               updatedValue.add(newValue);
             }
-          
             return [...updatedValue];
           });
         setCheckBoxes((prevCheckBoxes) => {
@@ -68,71 +67,93 @@ export const CheckBox = ({ updateAdvancedTags, className }) => {
         })
     }
     return(
-        <div className={`${className} checkBox-container`}>
-            <div className="checkBox-container-div">
-                {checkBoxes.genre.map((check, index) => (
-                    <div key={index}>
-                        <input type="checkbox" 
-                            id={check.value} 
-                            value={check.value} 
-                            checked={check.checked} 
-                            onChange={() => {checkBoxesChange("genre", index)}}>
-                        </input>
-                        <label htmlFor={check.value}>{check.label}</label>
+        <div className={`${className}`}>
+            <div className="checkBox-container">
+                <div className="checkBox-container-div">
+                    <h2>Genre</h2>
+                    <div className="checkBox-container-div-form">
+                        {checkBoxes.genre.map((check, index) => (
+                            <div key={index} className="checkBox-container-div-item">
+                                <input type="checkbox" name="checkbox" className="checkBox-input"
+                                    id={check.value} 
+                                    value={check.value} 
+                                    checked={check.checked} 
+                                    onChange={() => {checkBoxesChange("genre", index)}}>
+                                </input>
+                                <span className="checkBox-style"></span>
+                                <label htmlFor={check.value} className="checkBox-label">{check.label}</label>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-            <div className="checkBox-container-div">
-                {checkBoxes.graphics.map((check ,index) => (
-                    <div key={index}>
-                        <input type="checkbox" 
-                            id={check.value} 
-                            value={check.value} 
-                            checked={check.checked} 
-                            onChange={() => {checkBoxesChange("graphics", index)}}>
-                        </input>
-                        <label htmlFor={check.value}>{check.label}</label>
+                </div>
+                <div className="checkBox-container-div">
+                    <h2>Graphics</h2>
+                    <div className="checkBox-container-div-form">
+                        {checkBoxes.graphics.map((check ,index) => (
+                            <div key={index} className="checkBox-container-div-item">
+                                <input type="checkbox" name="checkbox" className="checkBox-input"
+                                    id={check.value} 
+                                    value={check.value} 
+                                    checked={check.checked} 
+                                    onChange={() => {checkBoxesChange("graphics", index)}}>
+                                </input>
+                                <span className="checkBox-style"></span>
+                                <label htmlFor={check.value} className="checkBox-label">{check.label}</label>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-            <div className="checkBox-container-div">
-                {checkBoxes.combat.map((check ,index) => (
-                    <div key={index}>
-                        <input type="checkbox" 
-                            id={check.value} 
-                            value={check.value} 
-                            checked={check.checked} 
-                            onChange={() => {checkBoxesChange("combat", index)}}>
-                        </input>
-                        <label htmlFor={check.value}>{check.label}</label>
+                </div>
+                <div className="checkBox-container-div">
+                    <h2>Combat</h2>
+                    <div className="checkBox-container-div-form">
+                        {checkBoxes.combat.map((check ,index) => (
+                            <div key={index} className="checkBox-container-div-item">
+                                <input type="checkbox" name="checkbox" className="checkBox-input"
+                                    id={check.value} 
+                                    value={check.value} 
+                                    checked={check.checked} 
+                                    onChange={() => {checkBoxesChange("combat", index)}}>
+                                </input>
+                                <span className="checkBox-style"></span>
+                                <label htmlFor={check.value} className="checkBox-label">{check.label}</label>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-            <div className="checkBox-container-div">
-                {checkBoxes.setting.map((check ,index) => (
-                    <div key={index}>
-                        <input type="checkbox" 
-                            id={check.value} 
-                            value={check.value} 
-                            checked={check.checked} 
-                            onChange={() => {checkBoxesChange("setting", index)}}>
-                        </input>
-                        <label htmlFor={check.value}>{check.label}</label>
+                </div>
+                <div className="checkBox-container-div">
+                    <h2>Gameplay</h2>
+                    <div className="checkBox-container-div-form">
+                        {checkBoxes.setting.map((check ,index) => (
+                            <div key={index} className="checkBox-container-div-item">
+                                <input type="checkbox" name="checkbox" className="checkBox-input"
+                                    id={check.value} 
+                                    value={check.value} 
+                                    checked={check.checked} 
+                                    onChange={() => {checkBoxesChange("setting", index)}}>
+                                </input>
+                                <span className="checkBox-style"></span>
+                                <label htmlFor={check.value} className="checkBox-label">{check.label}</label>
+                            </div>
+                        ))}
                     </div>
-                ))}
-            </div>
-            <div className="checkBox-container-div">
-                {checkBoxes.tags.map((check ,index) => (
-                    <div key={index}>
-                        <input type="checkbox" 
-                            id={check.value} 
-                            value={check.value} 
-                            checked={check.checked} 
-                            onChange={() => {checkBoxesChange("tags", index)}}>
-                        </input>
-                        <label htmlFor={check.value}>{check.label}</label>
+                </div>
+                <div className="checkBox-container-div">
+                    <h2>Tags</h2>
+                    <div className="checkBox-container-div-form">
+                        {checkBoxes.tags.map((check ,index) => (
+                            <div key={index} className="checkBox-container-div-item" >
+                                <input type="checkbox" name="checkbox" className="checkBox-input"
+                                    id={check.value} 
+                                    value={check.value} 
+                                    checked={check.checked} 
+                                    onChange={() => {checkBoxesChange("tags", index)}}>
+                                </input>
+                                <span className="checkBox-style"></span>
+                                <label htmlFor={check.value} className="checkBox-label">{check.label}</label>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </div>
     )

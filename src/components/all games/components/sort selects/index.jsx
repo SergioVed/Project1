@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./sortSelect.css"
 import 'animate.css';
-export const SortSelect = ({ handlePlatformChange, handleGenreChange, handleTagChange }) => {
+export const SortSelect = ({ handlePlatformChange, handleGenreChange, handleTagChange, isOpen }) => {
 
     const [platformOpt, setPlatformOpt] = useState([
         {value: "all", label: "All"},
@@ -30,24 +30,31 @@ export const SortSelect = ({ handlePlatformChange, handleGenreChange, handleTagC
     ])
     return(
         <div className='sort-container'>
-            <h2 className='sort-container-h2 animate__fadeIn animate__animated'>Platform: </h2>
-             <Form.Select className='sort-container-item animate__zoomInLeft animate__animated' aria-label="Default select example" onChange={(event) => {handlePlatformChange(event.target.value)}}>
-                {platformOpt.map((option) => (
-                    <option value={option.value}>{option.label}</option>
-                ))}
-            </Form.Select>
-            <h2 className='sort-container-h2 animate__fadeIn animate__animated animate__delay-1s'>Genre:</h2>
-            <Form.Select className='sort-container-item animate__zoomInLeft animate__animated animate__delay-1s' aria-label="Default select example" onChange={(event) => {handleGenreChange(event.target.value)}}>
-                    {genreOpt.map((option) => (
+            {!isOpen ? (
+            <div className='sort-container-group'>
+                <h2 className='sort-container-h2 animate__fadeIn animate__animated'>Genre:</h2>
+                <Form.Select className='sort-container-item animate__zoomInLeft animate__animated' aria-label="Default select example" onChange={(event) => {handleGenreChange(event.target.value)}}>
+                        {genreOpt.map((option) => (
+                            <option value={option.value}>{option.label}</option>
+                        ))}
+                </Form.Select>
+            </div>) : (<></>)}
+            <div className='sort-container-group'>
+                <h2 className='sort-container-h2 animate__fadeIn animate__animated animate__delay-1s'>Platform: </h2>
+                <Form.Select className='sort-container-item animate__zoomInLeft animate__animated animate__delay-1s' aria-label="Default select example" onChange={(event) => {handlePlatformChange(event.target.value)}}>
+                    {platformOpt.map((option) => (
                         <option value={option.value}>{option.label}</option>
                     ))}
-            </Form.Select>
-            <h2 className='sort-container-h2 animate__fadeIn animate__animated animate__delay-2s'>Sort-by:</h2>
-            <Form.Select className='sort-container-item animate__zoomInLeft animate__animated animate__delay-2s' aria-label="Default select example" onChange={(event) => {handleTagChange(event.target.value)}}>
-                    {sortOpt.map((option) => (
-                        <option value={option.value}>{option.label}</option>
-                    ))}
-            </Form.Select>
+                </Form.Select>
+            </div>
+            <div className='sort-container-group'>
+                <h2 className='sort-container-h2 animate__fadeIn animate__animated animate__delay-2s'>Sort-by:</h2>
+                <Form.Select className='sort-container-item animate__zoomInLeft animate__animated animate__delay-2s' aria-label="Default select example" onChange={(event) => {handleTagChange(event.target.value)}}>
+                        {sortOpt.map((option) => (
+                            <option value={option.value}>{option.label}</option>
+                        ))}
+                </Form.Select>
+            </div>
         </div>
     )
 }

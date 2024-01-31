@@ -27,23 +27,28 @@ export const Menu = () => {
         <div className="container-burger"
         onMouseEnter={mouseOn}
         onMouseLeave={mouseLeft}>
-            <div className={`menu-container ${isOpen ? "responsive-menu" : ""}`} ref={menuRef}>
+            <div className={`menu-container`} ref={menuRef}>
                 <div className="menu-items">
                     <div className="menu-AllGames menu-item">
-                        <img src={home} alt="" />
-                        <Link to={"/"} className="menu-item-link">Home page</Link>
+                        <Link to={"/"} className="menu-item-link"><img src={home} alt="" />
+                            <p>Home page</p>
+                        </Link>
                     </div>
                     <div className="menu-AllGames menu-item">
-                        <img src={menu} alt="" />
-                        <Link to={"/AllGames"} className="menu-item-link">All games</Link>
+                        <Link to={"/AllGames"} className="menu-item-link"><img src={menu} alt="" />
+                            <p>All games</p>
+                        </Link>
                     </div>
                     <div className="menu-AboutUs menu-item">
-                        <img src={info} alt=""/>
-                        <Link to={"/AboutUs"} className="menu-item-link">About us</Link>
+                        <Link to={"/AboutUs"} className="menu-item-link">
+                            <img src={info} alt=""/>
+                            <p>About us</p>
+                        </Link>
                     </div>
                     <div className="menu-ContactUs menu-item">
-                        <img src={image} alt=""/>
-                        <Link to={"/ContactUs"} className="menu-item-link">Contact us</Link>
+                        <Link to={"/ContactUs"} className="menu-item-link"><img src={image} alt=""/>
+                            <p>Contact us</p>
+                        </Link>
                     </div>
                 </div>
             </div>
