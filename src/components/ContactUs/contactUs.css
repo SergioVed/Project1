@@ -7,10 +7,11 @@
     background-color:#000;
     background-image: url(./img/Screenshot\ 2024-01-08\ 214407.png);
 }
-.contactUs-container{
-    width: 100vw;
+.contactUs-additional{
     height: 100vh;
+    width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -21,27 +22,18 @@
     flex-direction: column;
 }
 .contactUs-content{
+    --animate-delay: 0.5s;
     display: flex;
     justify-content: center;
     margin-top: 80px;
 }
-.contactUs-content-button{
-    margin-top: 20px;
-    width: 300px;
-    height: 70px;
-    color: #fff;
-    background-color: #67C8FF;
-    font-size: 22px;
-    font-family: Michroma;
-    border: none;
-    border-radius: 6px;
-}
-.contactUs-p{
+.contactUs-additional-p{
     font-family: Audiowide;
     font-size: 100px;
     color: #fff;
     filter: drop-shadow(0px 0px 2px #fff);
     text-align: center;
+    margin-bottom: 50px;
 }
 .contactUs-form-h1{
     font-family: Audiowide;
@@ -73,7 +65,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30vw;
+    width: 700px;
     height: 60vh;
 }
 .form-label{  
@@ -82,7 +74,7 @@
     color: #fff;
 }
 .contactUs-text{
-    width: 25vw;
+    width: 650px;
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -104,3 +96,29 @@
     margin-top: 20px;
     letter-spacing: 1.5px;
 }
+.contactUs-content-button{
+    margin-top: 20px;
+    width: 300px;
+    height: 70px;
+    color: #fff;
+    background-color: #67C8FF;
+    font-size: 30px;
+    font-family: Michroma;
+    border: none;
+    border-radius: 6px;
+}
+.contactUs-content-button:hover {
+    mask-image: linear-gradient(-75deg, rgba(0, 0, 0, .6) 30%, #000 50%, rgba(0, 0, 0, .6) 70%);
+    mask-size: 200%;
+    animation: wave 2s infinite;
+    color: #fff;
+  }
+  
+  @keyframes wave {
+    from {
+      -webkit-mask-position: 150%;
+    }
+    to {
+      -webkit-mask-position: -50%;
+    }
+  }

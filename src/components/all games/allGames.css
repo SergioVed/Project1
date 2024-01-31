@@ -2,7 +2,7 @@
     position: relative;
     background-color: #000;
     z-index: 0;
-  }.wrapper::before{
+}.wrapper::before{
     content: '';
     position: fixed;
     top: 0;
@@ -28,12 +28,25 @@
     filter: drop-shadow(0px 0px 2px #fff);
     font-weight: 200;
 }
-.allGames_cards{
-    min-height: 60vh;
+.cardsSecond{
+    width: 85vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-bottom: 3%;
+    height: auto;
+}
+.allGames_cards-error{
+    font-family: Exo;
+    color: #fff;
+    font-size: 40px;
+    font-weight: 200;
+    margin-top: 15%;
+    text-align: center;
 }
 .allGames_h2{
     margin-bottom: 2%;
+    margin-top: -2%;
     font-family: Audiowide;
     color: #fff;
     font-size: 90px;
@@ -52,9 +65,44 @@
     background: transparent;
 }
 .allGames-buttonUp{
+    background: transparent;
     display: none;
 }
 .buttonTop-img{
-    width: 71px;
-    height: 71px;
+    width: 80px;
+    height: 80px;
+}
+.checkBox-unvisible {
+    width: 100%;
+    height: 0px;
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.checkBox-visible {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.allGames_forms{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.allGames-forms-advanced-button{
+    background-color: rgba(255, 255, 255, 0.7);
+    font-size: 25px;
+    border: none;
+    font-family: Michroma;
+    letter-spacing: 2px;
+    width: 100%;
+    height: 60px;
+    transition: 0.7s;
+    border-radius: 20px 20px 20px 20px;
+}
+.advanced-button-close{
+    border-radius: 20px 20px 0px 0px;
+    transition: 0.5s;
 }
