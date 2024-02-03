@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Header from "C:/Users/Максим/OneDrive/Документи/HTML/Project1/src/components/header";
+
+import Header from "../../../header";
+
 import { useParams } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
