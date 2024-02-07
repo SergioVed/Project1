@@ -31,9 +31,13 @@ export const Search = () => {
             <img src={search} alt=""/>
             <input className={`search-input ${inputVal === "" ? "" : "search-input-after"}`} placeholder="Search" value={inputVal} onChange={(event) => {setInputVal(event.target.value)}}></input>
             <div className={`search-results ${inputVal === "" ? "search-results-invisible" : ""}`} ref={divRef}>
-              {filterGames.map((game) => (
+              {filterGames.length === 0 ? <p className="search-results-noGame">No game found</p> : 
+              <div>
+                {filterGames.map((game) => (
                 <Link to={`/AllGames/Page/${game.id}`} className="link"><p className="filteredGames-p">{game.title}</p></Link>
-              ))}
+                ))}
+              </div>
+              }
             </div>
         </div>
     )
