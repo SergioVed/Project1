@@ -44,6 +44,13 @@
     transition: 0.2s;
     z-index: 10;
 }
+.search-results-noGame{
+    color: #000;
+    font-family: Michroma;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 7%
+}
 .search-results-invisible{
     transition: 0.1s;
     opacity: 0;
